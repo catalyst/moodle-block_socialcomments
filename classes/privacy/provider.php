@@ -123,8 +123,8 @@ class provider implements
         // Get context by replies.
         $sql = "SELECT c.id
                 FROM {context} c
-                INNER JOIN mdl_block_socialcomments_cmmnts s ON s.contextid = c.id
-                INNER JOIN mdl_block_socialcomments_replies r ON r.commentid = s.id
+                INNER JOIN {block_socialcomments_cmmnts} s ON s.contextid = c.id
+                INNER JOIN {block_socialcomments_replies} r ON r.commentid = s.id
                 WHERE (r.userid = :userid)
                 GROUP BY id";
         $contextlist->add_from_sql($sql, $params);
